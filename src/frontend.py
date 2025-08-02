@@ -29,5 +29,6 @@ if st.button("Predict"):
         "structure_type_Mixed_use": structure_type_Mixed_use,
         "structure_type_Residential": structure_type_Residential
     }
-    response = requests.post("http://127.0.0.1:8000/predict", json=payload)
+    #response = requests.post("http://127.0.0.1:8000/predict", json=payload)  #use only if you are using locally on your personal machine
+    response = requests.post("https://electricity-cost-prediction-luz2.onrender.com/predict", json=payload)
     st.write("Predicted Electricity Cost:", response.json()["predicted_electricity_cost"])
