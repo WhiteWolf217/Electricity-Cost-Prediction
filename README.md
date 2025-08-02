@@ -12,8 +12,8 @@ It includes a Streamlit frontend for interactive user input and visualization.
 
 ## Demo Links
 
-- **FastAPI API:** [https://your-fastapi-app.onrender.com/docs](https://your-fastapi-app.onrender.com/docs)
-- **Streamlit Frontend:** [https://your-streamlit-app.onrender.com](https://your-streamlit-app.onrender.com)
+- **FastAPI API:** [https://electricity-cost-prediction-luz2.onrender.com/docs](https://electricity-cost-prediction-luz2.onrender.com/docs)
+- **Streamlit Frontend:** [https://electricity-cost-prediction-with-fronted.onrender.com/](https://electricity-cost-prediction-with-fronted.onrender.com/)
 
 *(Replace these URLs with your actual Render links after deployment.)*
 
