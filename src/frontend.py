@@ -3,13 +3,15 @@ import requests
 
 st.title("Electricity Cost Prediction")
 
-site_area = st.number_input("Site Area")
-water_consumption = st.number_input("Water Consumption")
-recycling_rate = st.number_input("Recycling Rate")
-utilisation_rate = st.number_input("Utilisation Rate")
-air_qality_index = st.number_input("Air Quality Index")
-issue_reolution_time = st.number_input("Issue Resolution Time")
-resident_count = st.number_input("Resident Count")
+site_area = st.number_input("Site Area (sq meters)")
+water_consumption = st.number_input("Water Consumption (liters/day)")
+recycling_rate = st.number_input("Recycling Rate (%)")
+utilisation_rate = st.number_input("Utilisation Rate (%)")
+air_qality_index = st.number_input("Air Quality Index (AQI)")
+issue_reolution_time = st.number_input("Issue Resolution Time (hours)")
+resident_count = st.number_input("Resident Count (number of people)")
+
+st.markdown("### Structure Type (One-hot encoded)")
 structure_type_Commercial = st.number_input("Commercial (0 or 1)")
 structure_type_Industrial = st.number_input("Industrial (0 or 1)")
 structure_type_Mixed_use = st.number_input("Mixed-use (0 or 1)")
@@ -29,6 +31,8 @@ if st.button("Predict"):
         "structure_type_Mixed_use": structure_type_Mixed_use,
         "structure_type_Residential": structure_type_Residential
     }
-    #response = requests.post("http://127.0.0.1:8000/predict", json=payload)  #use only if you are using locally on your personal machine
+
+    # response = requests.post("http://127.0.0.1:8000/predict", json=payload)  # Local testing
     response = requests.post("https://electricity-cost-prediction-luz2.onrender.com/predict", json=payload)
-    st.write("Predicted Electricity Cost:", response.json()["predicted_electricity_cost"])
+
+    st.write("💡 **Predicted Electricity Cost (USD/month):**", response.json()["predicted_electricity_cost"])
